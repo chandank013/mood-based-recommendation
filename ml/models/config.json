@@ -1,0 +1,13 @@
+{
+  "bert_model": "bert-base-uncased",
+  "max_len": 128,
+  "n_classes": 6,
+  "classes": [
+    "anger",
+    "fear",
+    "joy",
+    "love",
+    "sadness",
+    "surprise"
+  ]
+}

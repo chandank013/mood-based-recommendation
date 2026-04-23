@@ -1,0 +1,54 @@
+# ── Core Backend ──────────
+flask==3.0.3
+flask-cors>=4.0.1
+flask-socketio==5.3.6
+
+# ── Database ─────────────
+pymysql==1.1.1
+cryptography==42.0.8
+
+# ── Task Queue & Caching ─
+celery==5.3.6
+redis==5.0.4
+apscheduler==3.10.4
+
+# ── ML Core ─────────────
+scikit-learn==1.4.2
+numpy==1.26.4
+pandas==2.2.2
+joblib==1.4.2
+
+# ── Sentence Transformers
+sentence-transformers==2.7.0
+transformers==4.41.2
+torch==2.2.2
+
+tf-keras==2.15.0
+
+# ── Computer Vision ─────
+deepface==0.0.93
+opencv-python==4.9.0.80
+
+# ── Audio Processing ───
+librosa==0.10.2
+soundfile==0.12.1
+
+# ── Vector DB ──────────
+faiss-cpu==1.7.4
+
+# ── NLP / APIs ─────────
+groq==0.15.0
+nltk==3.8.1
+
+# ── External APIs ──────
+spotipy==2.25.1
+requests==2.32.3
+
+# ── Utilities ──────────
+python-dotenv==1.0.1
+eventlet==0.33.3
+tqdm==4.66.4
+
+pyJWT
+bcrypt 
+hf_xet

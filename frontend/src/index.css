@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --night:  #1B1931;
+  --velvet: #44174E;
+  --wine:   #662249;
+  --rose:   #A34054;
+  --amber:  #ED9E59;
+  --blush:  #E9BCB9;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--night);
+  color: var(--blush);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--night); }
+::-webkit-scrollbar-thumb { background: var(--wine); border-radius: 3px; }
+
+/* ── Orbs ── */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+.orb-1 {
+  width: 500px; height: 500px;
+  background: var(--velvet);
+  top: -100px; left: -100px;
+  opacity: 0.3;
+  animation: orbFloat1 8s ease-in-out infinite;
+}
+.orb-2 {
+  width: 400px; height: 400px;
+  background: var(--rose);
+  bottom: -50px; right: -50px;
+  opacity: 0.25;
+  animation: orbFloat2 10s ease-in-out infinite;
+}
+.orb-3 {
+  width: 300px; height: 300px;
+  background: var(--amber);
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 0.08;
+  animation: orbFloat3 12s ease-in-out infinite;
+}
+@keyframes orbFloat1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(60px,40px)} }
+@keyframes orbFloat2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-40px,-60px)} }
+@keyframes orbFloat3 { 0%,100%{transform:translate(-50%,-50%) scale(1)} 50%{transform:translate(-50%,-50%) scale(1.2)} }
+
+/* ── Glass ── */
+.glass {
+  background: rgba(68,23,78,0.25);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(233,188,185,0.1);
+  border-radius: 20px;
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  background: linear-gradient(135deg, var(--amber), var(--rose));
+  color: var(--night);
+  font-weight: 600;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'DM Sans', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-primary:hover  { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(237,158,89,0.35); }
+.btn-primary:active { transform: translateY(0); }
+.btn-primary:disabled { opacity: 0.38; cursor: not-allowed; transform: none !important; box-shadow: none !important; }
+
+.btn-ghost {
+  background: transparent;
+  border: 1.5px solid rgba(233,188,185,0.22);
+  color: var(--blush);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'DM Sans', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-ghost:hover { border-color: var(--amber); color: var(--amber); background: rgba(237,158,89,0.07); }
+
+/* ── Inputs ── */
+.mood-input {
+  width: 100%;
+  background: rgba(27,25,49,0.6);
+  border: 1.5px solid rgba(233,188,185,0.18);
+  border-radius: 16px;
+  color: var(--blush);
+  transition: all 0.3s ease;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+}
+.mood-input:focus {
+  outline: none;
+  border-color: var(--amber);
+  box-shadow: 0 0 24px rgba(237,158,89,0.18);
+}
+.mood-input::placeholder { color: rgba(233,188,185,0.32); }
+
+/* ── Cards ── */
+.rec-card {
+  background: rgba(102,34,73,0.2);
+  border: 1px solid rgba(233,188,185,0.07);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.rec-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(237,158,89,0.28);
+  box-shadow: 0 12px 40px rgba(27,25,49,0.5);
+}
+
+/* ── Tab active ── */
+.tab-active {
+  background: linear-gradient(135deg, var(--amber), var(--rose)) !important;
+  color: var(--night) !important;
+  border-radius: 50px;
+  border-color: transparent !important;
+}
+
+/* ── Shimmer ── */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(68,23,78,0.3) 0%,
+    rgba(163,64,84,0.45) 50%,
+    rgba(68,23,78,0.3) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmerAnim 1.8s linear infinite;
+}
+@keyframes shimmerAnim {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+/* ── Emotion badge ── */
+.emotion-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 18px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--amber), var(--rose));
+  color: var(--night);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ── Animations — IMPORTANT: opacity starts at 1, not 0 ── */
+@keyframes fadeUp {
+  0%   { opacity: 0; transform: translateY(18px); }
+  100% { opacity: 1; transform: translateY(0);    }
+}
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes pulseGlow {
+  0%,100% { box-shadow: 0 0 20px rgba(237,158,89,0.2); }
+  50%     { box-shadow: 0 0 40px rgba(237,158,89,0.5); }
+}
+@keyframes float {
+  0%,100% { transform: translateY(0);    }
+  50%     { transform: translateY(-8px); }
+}
+
+/* Fill-mode forwards so elements stay visible after animation */
+.animate-fade-up {
+  animation: fadeUp 0.55s ease both;
+}
+.animate-fade-in {
+  animation: fadeIn 0.4s ease both;
+}
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Delay helpers */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* Range input thumb styling */
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--amber);
+  cursor: pointer;
+  border: 2px solid var(--night);
+  box-shadow: 0 0 8px rgba(237,158,89,0.4);
+}
+input[type=range]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--amber);
+  cursor: pointer;
+  border: 2px solid var(--night);
+}
