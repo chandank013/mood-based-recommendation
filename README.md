@@ -25,12 +25,12 @@ Built using **React 18 + Vite**, **Flask 3**, **BERT (bert-base-uncased) + PyTor
 
 | Name | Roll No. | Contribution |
 |------|----------|-----------|
-| ** Anchal Jaiswal** | 24bds003 | ML Pipeline, Word2Vec Embeddings,External APIs |
+| **Anchal Jaiswal** | 24bds003 | ML Pipeline, Word2Vec Embeddings,External APIs |
 | **Chandan Kumar** | 24bds013 | Backend API, Flask Routes, MySQL Schema, JWT Auth, Groq LLaMA 3 integration |
 | **Nitish Naveen** | 24bds050 | React Frontend, UI/UX Design, Vite Integration |
 | **Prem Kishan** | 24bds057 | Model Training, Recommendation Engine |
 
-**Project Guide:** Asst. Prof. ShirShendu Layek
+**Project Guide:** Asst. Prof. Shirshendu Layek
 **Department:** Data Science and Artificial Intelligence, Indian Institute of Information Technology Dharwad.
 
 ---
